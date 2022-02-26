@@ -1,18 +1,20 @@
 import os
 import json
+from gevent import config
 import requests
-from dotenv import load_dotenv
-load_dotenv()
+import config
+# from dotenv import load_dotenv
+# load_dotenv()
 
 json_headers = {
     "Content-Type": "application/json",
-    "pinata_api_key": os.getenv("PINATA_API_KEY"),
-    "pinata_secret_api_key": os.getenv("PINATA_SECRET_API_KEY"),
+    "pinata_api_key": config.PKEY,
+    "pinata_secret_api_key": config.SKEY,
 }
 
 file_headers = {
-    "pinata_api_key": os.getenv("PINATA_API_KEY"),
-    "pinata_secret_api_key": os.getenv("PINATA_SECRET_API_KEY"),
+    "pinata_api_key": config.PKEY,
+    "pinata_secret_api_key": config.SKEY,
 }
 
 def convert_data_to_json(content):

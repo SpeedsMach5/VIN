@@ -6,8 +6,8 @@ import streamlit as st
 import json
 # from dotenv import load_dotenv
 import os
-from Data.pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json
-from Data.pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json, get_CID
+from pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json
+from pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json, get_CID
 import qrcode
 import cv2
 import sqlalchemy as sql
@@ -32,7 +32,7 @@ def load_contract():
     # Load the contract ABI
     with open('abi.json') as f:
         artwork_abi = json.load(f)
-    contract_address = config.SMART_CONTRACT_ADDRESS
+    contract_address = config.SCA
     # Load the contract
     contract = w3.eth.contract(
         address=contract_address,
