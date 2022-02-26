@@ -1,4 +1,4 @@
-qr 
+qrcode
 faker
 faker_vehicle
 web3
