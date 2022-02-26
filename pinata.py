@@ -1,6 +1,6 @@
 import os
 import json
-from gevent import config
+# from gevent import config
 import requests
 import config
 # from dotenv import load_dotenv
