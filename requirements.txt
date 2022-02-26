@@ -5,3 +5,4 @@ web3
 sqlalchemy 
 web3
 pyzbar
+cv2
