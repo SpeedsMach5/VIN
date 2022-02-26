@@ -4,3 +4,4 @@ faker_vehicle
 web3
 sqlalchemy 
 web3
+pyzbar

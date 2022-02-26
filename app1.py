@@ -4,7 +4,7 @@
 from web3 import Web3
 import streamlit as st
 import json
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 from Data.pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json
 from Data.pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json, get_CID
@@ -14,15 +14,16 @@ import sqlalchemy as sql
 import pandas as pd
 import io
 from pyzbar.pyzbar import decode
+import config
 
 import numpy as np
 
 
 
 
-load_dotenv()
+# load_dotenv()
 # Define and connect a new Web3 provider
-w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
+w3 = Web3(Web3.HTTPProvider(config.WEB3_PROVIDER_URI))
 ################################################################################
 # Contract Helper function:
 ################################################################################
@@ -31,7 +32,7 @@ def load_contract():
     # Load the contract ABI
     with open('abi.json') as f:
         artwork_abi = json.load(f)
-    contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+    contract_address = config.SMART_CONTRACT_ADDRESS
     # Load the contract
     contract = w3.eth.contract(
         address=contract_address,
