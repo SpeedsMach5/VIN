@@ -6,3 +6,4 @@ sqlalchemy
 web3
 pyzbar
 opencv-python-headless
+zbar
