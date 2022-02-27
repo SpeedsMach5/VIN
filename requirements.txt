@@ -4,5 +4,5 @@ faker_vehicle
 web3
 sqlalchemy 
 web3
-pyzbar
-opencv-python-headless
+# pyzbar
+# opencv-python-headless
